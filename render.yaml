@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: rm-crawler
+    env: docker
+    rootDir: backend-python
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: AUTH_TOKEN
+        sync: false
+      - key: WP_ORIGIN
+        sync: false
+      - key: TZ
+        value: Europe/Amsterdam
